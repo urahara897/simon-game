@@ -4,7 +4,7 @@ var userClickedPattern = [];
 var level = 0;
 var started = false;
 
-$(document).keydown(function (event) {
+$(document).on('keydown click',function (event) {
     if (!started) {
         $("h1").text("Level " + level);
         nextSequence();
@@ -46,13 +46,14 @@ function checkAnswer(currentLevel) {
         }
 
     } else {
+        console.log("failed");
         playSound("wrong");
         $("body").addClass("game-over");
-        $("#level-title").text("Game Over, Press Any Key to Restart");
+        $("h1").text("Game Over, Press Any Key/Click Anywhere to Restart");
 
         setTimeout(function () {
             $("body").removeClass("game-over");
-        }, 200);
+        }, 5000);
 
         startOver();
     }
