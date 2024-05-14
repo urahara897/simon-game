@@ -4,13 +4,21 @@ var userClickedPattern = [];
 var level = 0;
 var started = false;
 
-$(document).on('keydown click',function (event) {
+$(document).on('keydown', function(event) {
+    startGame();
+});
+
+$("h1").on('click', function(event) {
+    startGame();
+});
+
+function startGame() {
     if (!started) {
         $("h1").text("Level " + level);
         nextSequence();
         started = true;
     }
-});
+}
 
 $(".btn").click(function () {
     var chosenColor = $(this).attr("id");
@@ -53,7 +61,7 @@ function checkAnswer(currentLevel) {
 
         setTimeout(function () {
             $("body").removeClass("game-over");
-        }, 5000);
+        }, 100);
 
         startOver();
     }
