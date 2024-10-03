@@ -5,3 +5,5 @@
 > The higher the level the more difficult the pattern.
 
 > Once the player enters the wrong pattern, the game ends and the level will be reset on game restart.
+
+> Game is hosted on Github Pages
